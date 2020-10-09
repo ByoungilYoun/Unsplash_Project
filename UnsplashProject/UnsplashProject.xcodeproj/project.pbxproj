@@ -3,23 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A02530AE5000A65195 /* AppDelegate.swift */; };
-		0FDEA9A52530AE5000A65195 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A42530AE5000A65195 /* ViewController.swift */; };
 		0FDEA9AA2530AE5200A65195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A92530AE5200A65195 /* Assets.xcassets */; };
 		0FDEA9AD2530AE5200A65195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */; };
+		0FDEA9BC2530B86E00A65195 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FDEA9BB2530B86E00A65195 /* SnapKit */; };
+		0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C02530B91700A65195 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FDEA99D2530AE5000A65195 /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDEA9A02530AE5000A65195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0FDEA9A42530AE5000A65195 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0FDEA9A92530AE5200A65195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FDEA9AC2530AE5200A65195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FDEA9AE2530AE5200A65195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FDEA9C02530B91700A65195 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FDEA9BC2530B86E00A65195 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				0FDEA9A02530AE5000A65195 /* AppDelegate.swift */,
-				0FDEA9A42530AE5000A65195 /* ViewController.swift */,
+				0FDEA9C02530B91700A65195 /* HomeViewController.swift */,
 				0FDEA9A92530AE5200A65195 /* Assets.xcassets */,
 				0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */,
 				0FDEA9AE2530AE5200A65195 /* Info.plist */,
@@ -77,6 +79,9 @@
 			dependencies = (
 			);
 			name = UnsplashProject;
+			packageProductDependencies = (
+				0FDEA9BB2530B86E00A65195 /* SnapKit */,
+			);
 			productName = UnsplashProject;
 			productReference = 0FDEA99D2530AE5000A65195 /* UnsplashProject.app */;
 			productType = "com.apple.product-type.application";
@@ -104,6 +109,9 @@
 				Base,
 			);
 			mainGroup = 0FDEA9942530AE5000A65195;
+			packageReferences = (
+				0FDEA9BA2530B86E00A65195 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0FDEA99E2530AE5000A65195 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,8 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0FDEA9A52530AE5000A65195 /* ViewController.swift in Sources */,
 				0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */,
+				0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +281,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7MH5N2BKX;
 				INFOPLIST_FILE = UnsplashProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -280,7 +289,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.UnsplashProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -292,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7MH5N2BKX;
 				INFOPLIST_FILE = UnsplashProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,7 +309,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.byoungil.youn.UnsplashProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -325,6 +335,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0FDEA9BA2530B86E00A65195 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0FDEA9BB2530B86E00A65195 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0FDEA9BA2530B86E00A65195 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0FDEA9952530AE5000A65195 /* Project object */;
 }

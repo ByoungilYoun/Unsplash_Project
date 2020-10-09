@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class HomeViewController : UIViewController {
   
@@ -40,6 +41,7 @@ class HomeViewController : UIViewController {
     bt.backgroundColor = .systemPink
     bt.layer.cornerRadius = 10
     bt.addTarget(self, action: #selector(onSearchButtonClicked), for: .touchUpInside)
+    bt.isHidden = true
     return bt
   }()
   
@@ -47,6 +49,7 @@ class HomeViewController : UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
+    searchBar.delegate = self
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -84,7 +87,7 @@ class HomeViewController : UIViewController {
     searchBar.snp.makeConstraints {
       $0.top.equalTo(searchFilterSegment.snp.bottom).offset(18)
       $0.leading.equalToSuperview().offset(10)
-      $0.trailing.equalToSuperview().offset(10)
+      $0.trailing.equalToSuperview().offset(-10)
     }
   
     searchButton.snp.makeConstraints {
@@ -122,3 +125,34 @@ class HomeViewController : UIViewController {
     }
   }
 }
+
+  //MARK: - UISearchBarDelegate
+extension HomeViewController : UISearchBarDelegate {
+  func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    if (searchText.isEmpty) {
+      self.searchButton.isHidden = true
+      searchBar.resignFirstResponder() // 포커싱 해제
+    } else {
+      self.searchButton.isHidden = false
+    }
+  }
+
+  func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//    print("shouldChangeTextIn : \(searchBar.text?.appending(text).count)") // 글자 수
+    
+    let inputTextCount = searchBar.text?.appending(text).count ?? 0  // 글자 수
+
+    if (inputTextCount >= 12) {
+      self.view.makeToast("12자 까지만 입력가능합니다.", duration: 1.0, position: .center)
+    }
+    
+//    if inputTextCount  = 12 {
+//      return true
+//    } else {
+//      return false // 글자가 더이상 입력 되지 않는다
+//    }
+    
+    return inputTextCount <= 12
+  }
+}
+

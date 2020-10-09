@@ -14,6 +14,7 @@
 		0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C02530B91700A65195 /* HomeViewController.swift */; };
 		0FDEA9C62530D09900A65195 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C52530D09900A65195 /* UserListViewController.swift */; };
 		0FDEA9CA2530D0A500A65195 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */; };
+		E1A6894EF4D182B6BAF8F335 /* Pods_UnsplashProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F33BF1FD270B76C8258441B /* Pods_UnsplashProject.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,9 @@
 		0FDEA9C02530B91700A65195 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0FDEA9C52530D09900A65195 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
+		1D669611D477E94FEB0EE0B7 /* Pods-UnsplashProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashProject.release.xcconfig"; path = "Target Support Files/Pods-UnsplashProject/Pods-UnsplashProject.release.xcconfig"; sourceTree = "<group>"; };
+		1F33BF1FD270B76C8258441B /* Pods_UnsplashProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UnsplashProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC0136D0CFD64E3CA16DA6DA /* Pods-UnsplashProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnsplashProject.debug.xcconfig"; path = "Target Support Files/Pods-UnsplashProject/Pods-UnsplashProject.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +37,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FDEA9BC2530B86E00A65195 /* SnapKit in Frameworks */,
+				E1A6894EF4D182B6BAF8F335 /* Pods_UnsplashProject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F70DACC2530EB15006EB05C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0FDEA9C02530B91700A65195 /* HomeViewController.swift */,
+				0FDEA9C52530D09900A65195 /* UserListViewController.swift */,
+				0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		0FDEA9942530AE5000A65195 = {
 			isa = PBXGroup;
 			children = (
 				0FDEA99F2530AE5000A65195 /* UnsplashProject */,
 				0FDEA99E2530AE5000A65195 /* Products */,
+				234561CC2AA384BF6680286A /* Pods */,
+				31EA93D8694C1966B122B7C3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,14 +76,29 @@
 			isa = PBXGroup;
 			children = (
 				0FDEA9A02530AE5000A65195 /* AppDelegate.swift */,
-				0FDEA9C02530B91700A65195 /* HomeViewController.swift */,
-				0FDEA9C52530D09900A65195 /* UserListViewController.swift */,
-				0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */,
+				0F70DACC2530EB15006EB05C /* Controller */,
 				0FDEA9A92530AE5200A65195 /* Assets.xcassets */,
 				0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */,
 				0FDEA9AE2530AE5200A65195 /* Info.plist */,
 			);
 			path = UnsplashProject;
+			sourceTree = "<group>";
+		};
+		234561CC2AA384BF6680286A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC0136D0CFD64E3CA16DA6DA /* Pods-UnsplashProject.debug.xcconfig */,
+				1D669611D477E94FEB0EE0B7 /* Pods-UnsplashProject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		31EA93D8694C1966B122B7C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F33BF1FD270B76C8258441B /* Pods_UnsplashProject.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0FDEA9B12530AE5200A65195 /* Build configuration list for PBXNativeTarget "UnsplashProject" */;
 			buildPhases = (
+				22043FCEA0B16057A17E40B8 /* [CP] Check Pods Manifest.lock */,
 				0FDEA9992530AE5000A65195 /* Sources */,
 				0FDEA99A2530AE5000A65195 /* Frameworks */,
 				0FDEA99B2530AE5000A65195 /* Resources */,
+				7D3D069BD93443495AF2F710 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +172,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22043FCEA0B16057A17E40B8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UnsplashProject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7D3D069BD93443495AF2F710 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashProject/Pods-UnsplashProject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UnsplashProject/Pods-UnsplashProject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UnsplashProject/Pods-UnsplashProject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0FDEA9992530AE5000A65195 /* Sources */ = {
@@ -283,13 +359,14 @@
 		};
 		0FDEA9B22530AE5200A65195 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC0136D0CFD64E3CA16DA6DA /* Pods-UnsplashProject.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7MH5N2BKX;
 				INFOPLIST_FILE = UnsplashProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,13 +380,14 @@
 		};
 		0FDEA9B32530AE5200A65195 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D669611D477E94FEB0EE0B7 /* Pods-UnsplashProject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J7MH5N2BKX;
 				INFOPLIST_FILE = UnsplashProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

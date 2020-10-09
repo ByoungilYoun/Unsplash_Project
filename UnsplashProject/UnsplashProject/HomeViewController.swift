@@ -46,8 +46,12 @@ class HomeViewController : UIViewController {
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    setNavi()
     configureUI()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    setNavi()
   }
   
   //MARK: - setNavi()
@@ -92,10 +96,29 @@ class HomeViewController : UIViewController {
   
   //MARK: - @objc func
   @objc func searchFilterValueChanged(_ sender : UISegmentedControl) {
+    var searchBarTitle = ""
     
+    switch sender.selectedSegmentIndex {
+    case 0 :
+      searchBarTitle = "사진 키워드"
+    default :
+      searchBarTitle = "사용자 이름"
+    }
+    
+    self.searchBar.placeholder = searchBarTitle + "입력"
+    self.searchBar.becomeFirstResponder()
   }
   
   @objc func onSearchButtonClicked(_ sender : UIButton) {
-    
+    switch searchFilterSegment.selectedSegmentIndex {
+    case 0 :
+      let controller = PhotoCollectionViewController()
+      controller.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(controller, animated: true)
+    default :
+      let controller = UserListViewController()
+      controller.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(controller, animated: true)
+    }
   }
 }

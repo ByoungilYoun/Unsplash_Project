@@ -12,6 +12,8 @@
 		0FDEA9AD2530AE5200A65195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */; };
 		0FDEA9BC2530B86E00A65195 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0FDEA9BB2530B86E00A65195 /* SnapKit */; };
 		0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C02530B91700A65195 /* HomeViewController.swift */; };
+		0FDEA9C62530D09900A65195 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C52530D09900A65195 /* UserListViewController.swift */; };
+		0FDEA9CA2530D0A500A65195 /* PhotoCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		0FDEA9AC2530AE5200A65195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FDEA9AE2530AE5200A65195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FDEA9C02530B91700A65195 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		0FDEA9C52530D09900A65195 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				0FDEA9A02530AE5000A65195 /* AppDelegate.swift */,
 				0FDEA9C02530B91700A65195 /* HomeViewController.swift */,
+				0FDEA9C52530D09900A65195 /* UserListViewController.swift */,
+				0FDEA9C92530D0A500A65195 /* PhotoCollectionViewController.swift */,
 				0FDEA9A92530AE5200A65195 /* Assets.xcassets */,
 				0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */,
 				0FDEA9AE2530AE5200A65195 /* Info.plist */,
@@ -140,6 +146,8 @@
 			files = (
 				0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */,
 				0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */,
+				0FDEA9C62530D09900A65195 /* UserListViewController.swift in Sources */,
+				0FDEA9CA2530D0A500A65195 /* PhotoCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

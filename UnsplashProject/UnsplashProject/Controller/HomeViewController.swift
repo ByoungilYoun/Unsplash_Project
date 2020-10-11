@@ -108,10 +108,12 @@ class HomeViewController : UIViewController {
     case 0 :
       let controller = PhotoCollectionViewController()
       controller.modalPresentationStyle = .fullScreen
+      controller.photoTitle = searchBar.text!
       navigationController?.pushViewController(controller, animated: true)
     default :
       let controller = UserListViewController()
       controller.modalPresentationStyle = .fullScreen
+      controller.userTitle = searchBar.text!
       navigationController?.pushViewController(controller, animated: true)
     }
   }

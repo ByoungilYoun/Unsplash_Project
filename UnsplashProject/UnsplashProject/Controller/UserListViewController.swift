@@ -11,6 +11,12 @@ class UserListViewController : UIViewController {
   
   //MARK: - Properties
   
+  var userTitle : String = "" {
+    didSet {
+      self.title = userTitle + "💁🏻"
+    }
+  }
+  
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,6 +32,7 @@ class UserListViewController : UIViewController {
   //MARK: - setNavi()
   private func setNavi() {
     navigationController?.navigationBar.isHidden = false
+    navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(moveBack))
   }
   

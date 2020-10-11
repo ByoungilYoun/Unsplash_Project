@@ -10,6 +10,11 @@ import UIKit
 class PhotoCollectionViewController : UIViewController {
    
   //MARK: - Properties
+  var photoTitle : String = "" {
+    didSet {
+      self.title = photoTitle + "🧑🏼‍💻"
+    }
+  }
   
   //MARK: - LifeCycle
   override func viewDidLoad() {
@@ -26,6 +31,7 @@ class PhotoCollectionViewController : UIViewController {
   //MARK: - setNavi()
   private func setNavi() {
     navigationController?.navigationBar.isHidden = false
+    navigationController?.navigationBar.prefersLargeTitles = true
     navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(moveBack))
   }
   

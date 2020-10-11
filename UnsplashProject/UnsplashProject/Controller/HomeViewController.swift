@@ -56,6 +56,18 @@ class HomeViewController : UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     setNavi()
+    
+    // 키보드 올라가는 이벤트를 받는 처리
+    // 키보드 notification 등록
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notificatino:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    // 키보드 notification 해제
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+    NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
   }
   
   //MARK: - setNavi()
@@ -129,7 +141,6 @@ class HomeViewController : UIViewController {
     default :
       searchBarTitle = "사용자 이름"
     }
-    
     self.searchBar.placeholder = searchBarTitle + "입력"
     self.searchBar.becomeFirstResponder()
   }
@@ -137,6 +148,24 @@ class HomeViewController : UIViewController {
   @objc func onSearchButtonClicked(_ sender : UIButton) {
     // 화면으로 이동
       pushVC()
+  }
+  
+  @objc func keyboardWillShow(notification : NSNotification) {
+    // 키보드 사이즈 가져오기
+//    if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//      print("keyboardSize.height : \(keyboardSize.height)")
+//      print("searchButton.frame.origin.y : \(searchButton.frame.origin.y)")
+//
+//      if (keyboardSize.height < searchButton.frame.origin.y) {
+//        let distance = keyboardSize.height - searchButton.frame.origin.y
+//        self.view.frame.origin.y = distance
+//      }
+//    }
+  }
+  
+  @objc func keyboardWillHide(notificatino : NSNotification) {
+    // 원상태 복귀
+    self.view.frame.origin.y = 0
   }
 }
 

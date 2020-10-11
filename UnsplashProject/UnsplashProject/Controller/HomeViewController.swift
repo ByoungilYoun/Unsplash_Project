@@ -97,6 +97,21 @@ class HomeViewController : UIViewController {
     }
   }
   
+  //MARK: -  fileprivate method
+  fileprivate func pushVC() {
+    switch searchFilterSegment.selectedSegmentIndex {
+    case 0 :
+      let controller = PhotoCollectionViewController()
+      controller.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(controller, animated: true)
+    default :
+      let controller = UserListViewController()
+      controller.modalPresentationStyle = .fullScreen
+      navigationController?.pushViewController(controller, animated: true)
+    }
+  }
+  
+  
   //MARK: - @objc func
   @objc func searchFilterValueChanged(_ sender : UISegmentedControl) {
     var searchBarTitle = ""
@@ -113,21 +128,26 @@ class HomeViewController : UIViewController {
   }
   
   @objc func onSearchButtonClicked(_ sender : UIButton) {
-    switch searchFilterSegment.selectedSegmentIndex {
-    case 0 :
-      let controller = PhotoCollectionViewController()
-      controller.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(controller, animated: true)
-    default :
-      let controller = UserListViewController()
-      controller.modalPresentationStyle = .fullScreen
-      navigationController?.pushViewController(controller, animated: true)
-    }
+    // 화면으로 이동
+      pushVC()
   }
 }
 
   //MARK: - UISearchBarDelegate
 extension HomeViewController : UISearchBarDelegate {
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    
+    guard let userInputString = searchBar.text else { return }
+    
+    if userInputString.isEmpty {
+      self.view.makeToast("검색 키워드를 입력해주세요.🧐", duration: 1.0, position: .center)
+    } else {
+      pushVC()
+      searchBar.resignFirstResponder()
+    }
+    
+  }
+  
   func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
     if (searchText.isEmpty) {
       self.searchButton.isHidden = true
@@ -138,20 +158,11 @@ extension HomeViewController : UISearchBarDelegate {
   }
 
   func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//    print("shouldChangeTextIn : \(searchBar.text?.appending(text).count)") // 글자 수
-    
     let inputTextCount = searchBar.text?.appending(text).count ?? 0  // 글자 수
 
     if (inputTextCount >= 12) {
-      self.view.makeToast("12자 까지만 입력가능합니다.", duration: 1.0, position: .center)
+      self.view.makeToast("12자 까지만 입력가능합니다.😓", duration: 1.0, position: .center)
     }
-    
-//    if inputTextCount  = 12 {
-//      return true
-//    } else {
-//      return false // 글자가 더이상 입력 되지 않는다
-//    }
-    
     return inputTextCount <= 12
   }
 }

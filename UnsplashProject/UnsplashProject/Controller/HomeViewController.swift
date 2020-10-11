@@ -45,11 +45,12 @@ class HomeViewController : UIViewController {
     return bt
   }()
   
+  var keyboardDismissTapGesture = UITapGestureRecognizer(target: self, action: nil)
+  
   //MARK: - LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     configureUI()
-    searchBar.delegate = self
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +66,10 @@ class HomeViewController : UIViewController {
   //MARK: - configureUI()
   private func configureUI() {
     view.backgroundColor = .systemBackground
+    searchBar.delegate = self
+    searchBar.becomeFirstResponder() // 포커싱 주기
+    keyboardDismissTapGesture.delegate = self
+    view.addGestureRecognizer(keyboardDismissTapGesture)
     
     [iconImage, searchFilterSegment, searchBar, searchButton].forEach {
       view.addSubview($0)
@@ -167,3 +172,20 @@ extension HomeViewController : UISearchBarDelegate {
   }
 }
 
+  //MARK: - UITapGestureRecognizerDelegate
+extension HomeViewController : UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    print("gestureRecognizer")
+    // 터치로 들어온 뷰가 밑에것들이면
+    if (touch.view?.isDescendant(of: searchFilterSegment) == true ) {
+      print("세그먼트가 터치")
+      return false
+    } else if (touch.view?.isDescendant(of: searchBar) == true ) {
+      print("서치바가 터치")
+      return false
+    } else {
+      view.endEditing(true) // 화면edit 이 끝나서 키보드가 내려간다.
+      return true
+    }
+  }
+}

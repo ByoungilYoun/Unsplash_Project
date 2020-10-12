@@ -7,6 +7,7 @@
 
 import UIKit
 import Toast_Swift
+import Alamofire
 
 class HomeViewController : UIViewController {
   
@@ -147,7 +148,22 @@ class HomeViewController : UIViewController {
   
   @objc func onSearchButtonClicked(_ sender : UIButton) {
     // 화면으로 이동
-      pushVC()
+    let url = API.Base_URL + "search/photos"
+  
+    guard let userInput = self.searchBar.text else { return }
+    
+    // 키, 밸류 형식의 딕셔너리
+    let queryParam = [ "query" : userInput, "client_id" : API.Client_ID]
+    
+//    AF.request(url, method: .get, parameters: queryParam).responseJSON(completionHandler: { response in
+//      debugPrint(response)
+//    })
+    
+    AlamofireManager.shared.session.request(url).responseJSON(completionHandler: { response in
+      debugPrint(response)
+    })
+    
+    pushVC()
   }
   
   @objc func keyboardWillShow(notification : NSNotification) {
@@ -158,7 +174,7 @@ class HomeViewController : UIViewController {
 //
 //      if (keyboardSize.height < searchButton.frame.origin.y) {
 //        let distance = keyboardSize.height - searchButton.frame.origin.y
-//        self.view.frame.origin.y = distance
+//        self.view.fra me.origin.y = distance
 //      }
 //    }
   }

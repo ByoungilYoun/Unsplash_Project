@@ -148,20 +148,35 @@ class HomeViewController : UIViewController {
   
   @objc func onSearchButtonClicked(_ sender : UIButton) {
     // 화면으로 이동
-    let url = API.Base_URL + "search/photos"
+//    let url = API.Base_URL + "search/photos"
   
     guard let userInput = self.searchBar.text else { return }
     
     // 키, 밸류 형식의 딕셔너리
-    let queryParam = [ "query" : userInput, "client_id" : API.Client_ID]
+//    let queryParam = [ "query" : userInput, "client_id" : API.Client_ID]
     
 //    AF.request(url, method: .get, parameters: queryParam).responseJSON(completionHandler: { response in
 //      debugPrint(response)
 //    })
     
-    AlamofireManager.shared.session.request(url).responseJSON(completionHandler: { response in
-      debugPrint(response)
-    })
+    var urlToCall : URLRequestConvertible?
+    
+    switch searchFilterSegment.selectedSegmentIndex {
+    case 0:
+      urlToCall = SearchRouter.searchPhotos(term: userInput)
+    case 1:
+      urlToCall = SearchRouter.searchUsers(term: userInput)
+    default :
+      print("default")
+    }
+    
+    if let urlConvertible = urlToCall {
+      AlamofireManager.shared.session.request(urlConvertible).responseJSON(completionHandler: { response in
+        debugPrint(response)
+      })
+    }
+    
+    
     
     pushVC()
   }

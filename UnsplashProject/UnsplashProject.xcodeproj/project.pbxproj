@@ -11,6 +11,7 @@
 		0F1734F92534D0AE0052C8DB /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1734F82534D0AE0052C8DB /* AlamofireManager.swift */; };
 		0F1734FD2534D1790052C8DB /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1734FC2534D1790052C8DB /* BaseInterceptor.swift */; };
 		0F1735002534D7470052C8DB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1734FF2534D7470052C8DB /* Logger.swift */; };
+		0F1735032535FDE30052C8DB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1735022535FDE30052C8DB /* SearchRouter.swift */; };
 		0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A02530AE5000A65195 /* AppDelegate.swift */; };
 		0FDEA9AA2530AE5200A65195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A92530AE5200A65195 /* Assets.xcassets */; };
 		0FDEA9AD2530AE5200A65195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */; };
@@ -26,6 +27,7 @@
 		0F1734F82534D0AE0052C8DB /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
 		0F1734FC2534D1790052C8DB /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		0F1734FF2534D7470052C8DB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		0F1735022535FDE30052C8DB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
 		0FDEA99D2530AE5000A65195 /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDEA9A02530AE5000A65195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDEA9A92530AE5200A65195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 				0F1734F82534D0AE0052C8DB /* AlamofireManager.swift */,
 				0F1734FC2534D1790052C8DB /* BaseInterceptor.swift */,
 				0F1734FF2534D7470052C8DB /* Logger.swift */,
+				0F1735022535FDE30052C8DB /* SearchRouter.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */,
 				0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */,
 				0FDEA9C62530D09900A65195 /* UserListViewController.swift in Sources */,
+				0F1735032535FDE30052C8DB /* SearchRouter.swift in Sources */,
 				0F1734F92534D0AE0052C8DB /* AlamofireManager.swift in Sources */,
 				0FDEA9CA2530D0A500A65195 /* PhotoCollectionViewController.swift in Sources */,
 				0F1734FD2534D1790052C8DB /* BaseInterceptor.swift in Sources */,

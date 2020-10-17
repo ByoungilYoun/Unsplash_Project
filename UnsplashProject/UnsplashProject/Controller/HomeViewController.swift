@@ -62,6 +62,9 @@ class HomeViewController : UIViewController {
     // 키보드 notification 등록
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notificatino:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    
+    // 인증 실패 노티피케이션 등록
+    NotificationCenter.default.addObserver(self, selector: #selector(showErrorPopup(notification:)), name: NSNotification.Name(rawValue: NOTIFICATION.API.AUTH_FAIL), object: nil)
   }
   
   override func viewWillDisappear(_ animated: Bool) {
@@ -69,6 +72,9 @@ class HomeViewController : UIViewController {
     // 키보드 notification 해제
     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    
+    // 인증 실패 노티피케이션 등록 해제
+    NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: NOTIFICATION.API.AUTH_FAIL), object: nil)
   }
   
   //MARK: - setNavi()
@@ -163,21 +169,26 @@ class HomeViewController : UIViewController {
     
     switch searchFilterSegment.selectedSegmentIndex {
     case 0:
-      urlToCall = SearchRouter.searchPhotos(term: userInput)
+//      urlToCall = SearchRouter.searchPhotos(term: userInput)
+      AlamofireManager.shared.getPhotos(searchTerm: userInput, completion: { result in
+        switch result {
+        case .success(let fetchedPhotos) :
+          print("HomeVC - getPhotos.success - fetchedPhotos.count : \(fetchedPhotos.count)")
+        case .failure(let error) :
+          print("HomeVC - getPhotos.failure - error : \(error.rawValue)")
+        }
+      })
     case 1:
       urlToCall = SearchRouter.searchUsers(term: userInput)
     default :
       print("default")
     }
     
-    if let urlConvertible = urlToCall {
-      AlamofireManager.shared.session.request(urlConvertible).responseJSON(completionHandler: { response in
-        debugPrint(response)
-      })
-    }
-    
-    
-    
+//    if let urlConvertible = urlToCall {
+//      AlamofireManager.shared.session.request(urlConvertible).validate(statusCode: 200..<401).responseJSON(completionHandler: { response in
+//        debugPrint(response)
+//      })
+//    }
     pushVC()
   }
   
@@ -197,6 +208,17 @@ class HomeViewController : UIViewController {
   @objc func keyboardWillHide(notificatino : NSNotification) {
     // 원상태 복귀
     self.view.frame.origin.y = 0
+  }
+  
+  @objc func showErrorPopup(notification : NSNotification) {
+    print("showErrorPopup()")
+    if let data = notification.userInfo?["statusCode"] {
+      print("showErrorPopup() data - \(data)")
+      
+      DispatchQueue.main.async {
+        self.view.makeToast("\(data) 에러 입니다.", duration : 1.5 , position : .center)
+      }
+    }
   }
 }
 

@@ -12,6 +12,8 @@
 		0F1734FD2534D1790052C8DB /* BaseInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1734FC2534D1790052C8DB /* BaseInterceptor.swift */; };
 		0F1735002534D7470052C8DB /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1734FF2534D7470052C8DB /* Logger.swift */; };
 		0F1735032535FDE30052C8DB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1735022535FDE30052C8DB /* SearchRouter.swift */; };
+		0FBFDE1A253B52EC001ED4B0 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFDE19253B52EC001ED4B0 /* Photo.swift */; };
+		0FBFDE1E253B5356001ED4B0 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBFDE1D253B5356001ED4B0 /* MyError.swift */; };
 		0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A02530AE5000A65195 /* AppDelegate.swift */; };
 		0FDEA9AA2530AE5200A65195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9A92530AE5200A65195 /* Assets.xcassets */; };
 		0FDEA9AD2530AE5200A65195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */; };
@@ -28,6 +30,8 @@
 		0F1734FC2534D1790052C8DB /* BaseInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInterceptor.swift; sourceTree = "<group>"; };
 		0F1734FF2534D7470052C8DB /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		0F1735022535FDE30052C8DB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		0FBFDE19253B52EC001ED4B0 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		0FBFDE1D253B5356001ED4B0 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		0FDEA99D2530AE5000A65195 /* UnsplashProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnsplashProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FDEA9A02530AE5000A65195 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0FDEA9A92530AE5200A65195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,6 +79,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		0FBFDE18253B52E1001ED4B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0FBFDE19253B52EC001ED4B0 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0FBFDE1C253B5340001ED4B0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0F1734F42534797A0052C8DB /* Constants.swift */,
+				0FBFDE1D253B5356001ED4B0 /* MyError.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0FDEA9942530AE5000A65195 = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +117,10 @@
 		0FDEA99F2530AE5000A65195 /* UnsplashProject */ = {
 			isa = PBXGroup;
 			children = (
-				0F1734F72534D0940052C8DB /* API */,
 				0FDEA9A02530AE5000A65195 /* AppDelegate.swift */,
-				0F1734F42534797A0052C8DB /* Constants.swift */,
+				0FBFDE18253B52E1001ED4B0 /* Model */,
+				0F1734F72534D0940052C8DB /* API */,
+				0FBFDE1C253B5340001ED4B0 /* Utils */,
 				0F70DACC2530EB15006EB05C /* Controller */,
 				0FDEA9A92530AE5200A65195 /* Assets.xcassets */,
 				0FDEA9AB2530AE5200A65195 /* LaunchScreen.storyboard */,
@@ -247,7 +269,9 @@
 				0FDEA9A12530AE5000A65195 /* AppDelegate.swift in Sources */,
 				0FDEA9C12530B91700A65195 /* HomeViewController.swift in Sources */,
 				0FDEA9C62530D09900A65195 /* UserListViewController.swift in Sources */,
+				0FBFDE1A253B52EC001ED4B0 /* Photo.swift in Sources */,
 				0F1735032535FDE30052C8DB /* SearchRouter.swift in Sources */,
+				0FBFDE1E253B5356001ED4B0 /* MyError.swift in Sources */,
 				0F1734F92534D0AE0052C8DB /* AlamofireManager.swift in Sources */,
 				0FDEA9CA2530D0A500A65195 /* PhotoCollectionViewController.swift in Sources */,
 				0F1734FD2534D1790052C8DB /* BaseInterceptor.swift in Sources */,
